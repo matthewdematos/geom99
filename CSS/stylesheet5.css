@@ -1,6 +1,6 @@
 /* Header image - owned by Faith B */
 .imageHeader {
-    background-image: url("../Images/header-image.JPG");
+    background-image: url("../images/header.png");
     min-height: 30vh;
     background-size: cover;
     background-position: center;
