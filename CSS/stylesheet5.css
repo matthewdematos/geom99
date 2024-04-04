@@ -72,6 +72,13 @@ h3  {
 	color: Black;
 	border-bottom: 3px solid #ccc!important;
 }
+
+name-adj { 
+	font-family: "Segoe UI",Arial,sans-serif;
+	font-size: 21px;
+	color: Black;
+	border-bottom: 3px solid #ccc!important;
+}
 h4, h5 {
     font-family: "Segoe UI",Arial,sans-serif;
 	font-size: 20px;
