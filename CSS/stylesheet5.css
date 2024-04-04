@@ -7,7 +7,7 @@
 }
 /*Header classes done by April, edited by Faith*/
 .HeaderBoarder {
-    background: #4C704C;
+    background: #264D89;
 }
 
 /* Header formatting - owned by April M */
@@ -300,7 +300,7 @@ position: fixed;
 }
 #footer{
     color: rgb(0, 0, 0);
-    background-color: #4C704C ;
+    background-color: #264D89 ;
   
 }
 
@@ -457,7 +457,7 @@ position: fixed;
     margin-left: 10%;
     margin-right: 10%;
     justify-content: space-between;
-    background-color: #698d69;
+    background-color: #264D89;
     color: white;
     cursor: pointer;
     padding:1.5em;
@@ -479,7 +479,7 @@ position: fixed;
     }
 /* creates an active button when hovering over the button Maya Ivimey*/    
 .active,.ExpandingButton:hover{
-    background-color: #1b451b;
+    background-color: #193A6C;
 }
 /*The following is used from w3schools to create plus and minus for expanding content: https://www.w3schools.com/howto/howto_js_accordion.asp*/
 .ExpandingButton:after {
@@ -504,7 +504,7 @@ position: fixed;
 }
 /* Styles the buttons Maya Ivimey*/
 .styleButton{
-	background-color: #698d69;
+	background-color:  #264D89;
   	border: none;
   	color: white;
   	text-align: center;
