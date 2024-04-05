@@ -77,16 +77,25 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // function (data) { createOverlay(data, "First Floor", firstStyle) });
 
 	
-// firstFloor.on('data:loaded', function(){
-// firstFloor.addTo(map);
+firstFloor.on('data:loaded', function(){
+firstFloor.addTo(map);
 
-// var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
-//     style: function(feature) {
-//         switch (feature.properties.FLOOR) {
-//             case '1': return {color: "#ff0000"};
-//         }
-//     }
-// });
+var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
+    style: function(feature) {
+        switch (feature.properties.FLOOR) {
+            case '1': return {color: "#ff0000"};
+        }
+    }
+});
+
+var secondFloor = new L.GeoJSON.AJAX("GeoJSON/secondFloor.geojson", {
+    style: function(feature) {
+        switch (feature.properties.FLOOR) {
+            case '1': return {color: "#0000ff"};
+        }
+    }
+});
+	
 // firstFloor.on('data:loaded', function(){
 // firstFloor.addTo(map);
 
