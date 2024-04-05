@@ -50,13 +50,13 @@
 
 var map = L.map('map').setView([44.3408, -78.7409], 18);
 
-var firstStyle = {
-    style: function(feature) {
-        switch (feature.properties.FLOOR) {
-            case '1': return {color: "#ff0000"};
-	}
-    }
-};
+// var firstStyle = {
+//     style: function(feature) {
+//         switch (feature.properties.FLOOR) {
+//             case '1': return {color: "#ff0000"};
+// 	}
+//     }
+// };
 	    
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
