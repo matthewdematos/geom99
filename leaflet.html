@@ -56,8 +56,8 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson");
-geojson.on('data:loaded', function(){
-geojson.addTo(map);
+firstFloor.on('data:loaded', function(){
+firstFloor.addTo(map);
 });
 
 // var firstFloor = L.layerGroup().addTo(map)
