@@ -13,8 +13,8 @@
    <!-- Leaflet JS -->
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin="">
-   </script>
+     crossorigin=""></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -55,23 +55,28 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var firstFloor = L.layerGroup().addTo(map)
+var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson");
+geojson.on('data:loaded', function(){
+geojson.addTo(map);
+});
+
+// var firstFloor = L.layerGroup().addTo(map)
 	
-jQuery.getJSON( "GeoJSON/firstFloor.geojson", function( json ){
-  L.geoJSON( json, {
-    onEachFeature: addMyData,
-  })
-})	
+// jQuery.getJSON( "GeoJSON/firstFloor.geojson", function( json ){
+//   L.geoJSON( json, {
+//     onEachFeature: addMyData(),
+//   })
+// })	
 
-jQuery.getJSON( "GeoJSON/secondFloor.geojson", function( json ){
-  L.geoJSON( json, {
-    onEachFeature: addMyData,
-  })
-})	
+// jQuery.getJSON( "GeoJSON/secondFloor.geojson", function( json ){
+//   L.geoJSON( json, {
+//     onEachFeature: addMyData(),
+//   })
+// })	
 
-function addMyData( feature, layer ){
-	firstFloor.addLayer( layer )
-}
+// function addMyData( feature, layer ){
+// 	firstFloor.addLayer( layer )
+// }
 
 // L.geoJSON(firstFloor, {
 //     style: function(feature) {
