@@ -47,10 +47,16 @@
   </div>
   
 <script>
-var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+var map = L.map('map', {
+    center: [44.3408, -78.7409],
+    zoom: 18
+});
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
+}).addTo(map);
 
 var firstFloor = 
 {
@@ -33092,24 +33098,19 @@ L.geoJSON(firstFloor, {
             case '1': return {color: "#ff0000"};
         }
     }
-});
+}).addTo(map);
+	
 L.geoJSON(secondFloor, {
     style: function(feature) {
         switch (feature.properties.FLOOR) {
             case '2': return {color: "#0000ff"};
         }
     }
-});
-
-var map = L.map('map', {
-    center: [44.3408, -78.7409],
-    zoom: 18,
-    layers: [osm, firstFloor, secondFloor]
-});
+}).addTo(map);
 
 var floors = {
     "First Floor": firstFloor,
-    "Second Floor": secondFloor,
+    "Second Floor": secondFloor
 };
 	
 var layerControl = L.control.layers(null, floors).addTo(map);
