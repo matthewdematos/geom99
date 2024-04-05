@@ -76,10 +76,6 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", 
 // function (data) { createOverlay(data, "First Floor", firstStyle) });
 
-	
-firstFloor.on('data:loaded', function(){
-firstFloor.addTo(map);
-
 var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
     style: function(feature) {
         switch (feature.properties.FLOOR) {
