@@ -53,7 +53,7 @@ var map = L.map('map', {
     zoom: 18
 });
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
@@ -33112,8 +33112,12 @@ var floors = {
     'First Floor': firstFloor,
     'Second Floor': secondFloor
 };
+
+var baseMap = {
+    'Open Street Map': osm
+};
 	
-var layerControl = L.control.layers(null, floors).addTo(map);
+var layerControl = L.control.layers(baseMap, floors).addTo(map);
 	
 </script>
 <!-- End page content -->
