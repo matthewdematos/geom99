@@ -55,11 +55,22 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson");
+var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
+    style: function(feature) {
+        switch (feature.properties.FLOOR) {
+            case '1': return {color: "#ff0000"};
+        }
+    }
+});
 firstFloor.on('data:loaded', function(){
 firstFloor.addTo(map);
 });
-
+//     style: function(feature) {
+//         switch (feature.properties.FLOOR) {
+//             case '1': return {color: "#ff0000"};
+//         }
+//     }
+// }).addTo(map);
 // var firstFloor = L.layerGroup().addTo(map)
 	
 // jQuery.getJSON( "GeoJSON/firstFloor.geojson", function( json ){
@@ -78,13 +89,13 @@ firstFloor.addTo(map);
 // 	firstFloor.addLayer( layer )
 // }
 
-// L.geoJSON(firstFloor, {
-//     style: function(feature) {
-//         switch (feature.properties.FLOOR) {
-//             case '1': return {color: "#ff0000"};
-//         }
-//     }
-// }).addTo(map);
+L.geoJSON(firstFloor, {
+    style: function(feature) {
+        switch (feature.properties.FLOOR) {
+            case '1': return {color: "#ff0000"};
+        }
+    }
+}).addTo(map);
 	
 // L.geoJSON(secondFloor, {
 //     style: function(feature) {
