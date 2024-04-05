@@ -1,9 +1,64 @@
-# Leaflet CSS file
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> S.S Pathfinders </title>
+  <link rel="stylesheet" href="CSS/stylesheet.css">
+  <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">
+    <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-
-# Leaflet JS file
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+   <!-- Leaflet JS -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+     crossorigin="">
+   </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+  <body>
+  
+  <!-- Navbar (sit on top) November 16,2023-->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active1"> <img src="Images/Logo.png" alt="Our Logo" class="logo" width="25" height="25"></a>
+    <a href="project.html">Project</a>
+    <a href="instantapps.html">Instant Apps</a>
+    <a href="experiencebuilder.html">Experience Builder</a>  
+    <a href="leaflet.html">Leaflet</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+<!-- Header -->
+<header class="imageHeader" >
+  <div>
+    <h1 class= "header-start"> S.S. Pathfinders </h1>
+    <p class = "header-Middle">Working Together to Navigate Your World</p>
+    <p class = "header-end"> Since 2024 </p>
+  </div>
+</header>
+
+<!-- Page content -->
+  <div class="w3-container w3-padding-32 text-dive" id="projects">
+	<h1> S.S. Pathfinders </h1>
+	<h3>Introduction</h3> 
+	  <p>
+	    
+    
+  </div>
+  <div id="map"></div>
+<script>
+var map = L.map('map').setView([44.3404, -78.7409], 17);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+</script>
+<!-- End page content -->
+
+<footer class="w3-center w3-padding-16 bottom" id="footer">
+</footer>
+<script src="JavaScript/Scripts.js"></script>
+</body>
+</html>
+
