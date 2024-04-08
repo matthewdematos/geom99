@@ -2,7 +2,8 @@
 
 
 .instant {
-	height: 400px;
+	height: 100%;
+	width: auto;
 }
 
 /* Header image - owned by Faith B */
