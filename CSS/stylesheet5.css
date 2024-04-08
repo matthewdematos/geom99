@@ -1,5 +1,10 @@
 #map { height: 600px;}
 
+
+.instant {
+	width: 400px;
+}
+
 /* Header image - owned by Faith B */
 .imageHeader {
     background-image: url("../images/header.png");
