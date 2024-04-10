@@ -534,7 +534,7 @@ From https://www.shecodes.io/athena/40835-how-to-round-an-image-in-html#:~:text=
 #myTopnav a.selected{
     background-color: #698d6921;
 }
-iframe {
-  height: auto;
-  width: 100%;
+video{
+  height:auto;
+  max-width: "100%";
 }
