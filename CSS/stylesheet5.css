@@ -541,7 +541,7 @@ video{
 }
 /*To create a mulit level bullet list*/
 .IndentedList{
-  margin-left: 2em;
+  margin-left: 10px;
 }
 /*Stylization for links on the Expereince Builder Page*/
 .EBLink{
