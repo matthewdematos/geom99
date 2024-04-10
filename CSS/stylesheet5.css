@@ -159,8 +159,7 @@ margin-top: 2px;
 /* gives style to page titles that are actively on screen*/
 
 .active1 {
-  background-color:rgba(255, 255, 255, 0.804);
-  color: rgba(255, 255, 255, 0);
+  background-color:rgba(212, 212, 212, 0.804);
 }
 /* hamburger icon that is hidden when not on small screens*/
 
@@ -541,7 +540,7 @@ video{
 }
 /*To create a mulit level bullet list*/
 .IndentedList{
-  margin-left: 10px;
+  margin-left: 25px;
 }
 /*Stylization for links on the Expereince Builder Page*/
 .EBLink{
