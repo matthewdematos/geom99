@@ -544,6 +544,8 @@ video{
 }
 /*Stylization for links on the Expereince Builder Page*/
 .EBLink{
+  display: flex;
+  justify-content: center;
   color: rgb(251, 247, 247);
   background-color: #10273b;
   padding: 15px;
