@@ -159,8 +159,8 @@ margin-top: 2px;
 /* gives style to page titles that are actively on screen*/
 
 .active1 {
-  background-color:white;
-  color: white;
+  background-color:rgba(255, 255, 255, 0.804);
+  color: rgba(255, 255, 255, 0);
 }
 /* hamburger icon that is hidden when not on small screens*/
 
