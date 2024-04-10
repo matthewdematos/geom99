@@ -534,7 +534,19 @@ From https://www.shecodes.io/athena/40835-how-to-round-an-image-in-html#:~:text=
 #myTopnav a.selected{
     background-color: #698d6921;
 }
+/*For videos to allow them to show up on screen well*/
 video{
   height:auto;
-  max-width: "100%";
+  width: 100%;
+}
+/*To create a mulit level bullet list*/
+.IndentedList{
+  margin-left: 2em;
+}
+/*Stylization for links on the Expereince Builder Page*/
+.EBLink{
+  color: black;
+}
+.EBLink:hover{
+  color: #264c6c;
 }

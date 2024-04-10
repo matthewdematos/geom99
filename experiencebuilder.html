@@ -42,25 +42,53 @@
         <source src="videos/FrostFinder_Final3_Overview.mp4" type="video/mp4">
          Your browser does not support the video tag.
     </video>
+    <p>Video description: Showcasing the "Frost Finder" created in Esri's Experience Builder, this video shows the functionality to turn on and off layers, select showcased locations from the cards displayed at the bottom of the page to have them highlighted on the map, as well as the ability to search for rooms and have them highlighted on the map. 
+    </p>
+    <a Class="EBLink" href="https://experience.arcgis.com/experience/cd72fb566ceb49a182f38c97f4a2a115">Link to Frost Finder Experience Builder application</a>
   </div>
   <div>
-  <iframe src="https://experience.arcgis.com/experience/6ec50d67415d46d0aa632a06acd0f81e/" alt = "Iframes are not allowed" allowfullscreen></iframe>
+    <p>The final creation of the "Frost Finder" showcased in the above video is a culmination of a few features that enable the user to find showcased locations as well as be able to search for rooms in the search bar. These functionalities are simple to create and set up in Experience Builder and meet some of the desired outcomes of our project. There is also a locator button on the "Frost Finder" as seen below, that works best on mobile devices and has a very rough location that is not exact enough for navigation beyond just a general idea of which side of the building the user is on. There is also the functionality in Experience Builder to enable routing which we did not have time to work with as it requires a utility or routing network of the area to be routed in and we did not have time to build it for this project. 
+    </p>
+    <h5>Some Things to Note:</h5>
+    <p>As can be seen in the video, the search bar doesn’t always select the record on the first selection from the drop-down menu. We do not know if this is a settings issue and can be fixed, or if Experience Builder is a bit clunky and not as user-friendly as desired. A similar issue occurs in the list view cards for showcasing rooms where once selected, unless selected again or another record on the same view is selected, it stays selected on the map. This could be changed to the trigger being a flash instead of a selection, but that’s more of a workaround. For being able to update or change the application for special events, the Experience Builder can be duplicated and modified for a specific event, like an open house. The web app that is connected to the application could also be updated or changed and that should be reflected in the application. Both options would require someone who understands Esri software and GIS if the data itself needs to be changed, but if the Experience Builder just needs to be updated a bit, it is somewhat simple to use the interface. Specifically for interior building applications, there is a widget for an easier way to switch between floor views if the data is "Floor Aware".</p>
+    <h5>Overall Thoughts:</h5>
+    <p>Experience Builder is a great application to use overall, with a lot more functionality and adjustability than instant apps. Experience Builder does not have any customization options regarding coding unless you are using the developer version of Experience Builder, so there may be some roadblocks for some types of functionality and application styles, but for our purposes, this application seems to be pretty usefu</p>
+    <h5>Advice:</h5>
+    <p> Experience Builder's "Actions" and "Triggers" can be confusing, so doing some research in the Experience Builder documentation to understand and make sure you know what action would be best for your work, would be advised. If you use a search bar and your data disappears when using an action/trigger except for the selected data, make sure you turn off "Enable filtering for layer source search" as this caused many problems for our group when building this application. It is also recommended that if you want to use lists for the view cards (First and Second-floor room tabs) the data used to create this must be considered extensively. In our example we did not have time to update the data attributes to reflect a good name and description for each chosen record, however, this can be done to make it look better and be more user-friendly. Also regarding these lists, you can create a data view, which we did, to only show select attributes in these list view cards.</p>
+    <h4>Quick Overview:</h4>
+    <h5>Pros:</h5>
+        <ul>
+          <li>Easy to use and there is a decent amount of functionality</li>
+          <li>Has a widget option for filtering floors, however, the data has to be specifically "Floor Aware"</li>
+          <li>Has a search bar option that can highlight and zoom on a selected record 
+          </li>
+          <li class="IndentedList">The shown attribute field and searchable attribute fields can be specified</li>
+          <li>	- Can create a window (sidebar) that expands and collapses to hold more information, or a widget
+          </li>
+          <li>Lists can be added and connected to the data creating cards that can showcase data</li>
+          <li class="IndentedList">The data attributes need to be designed for this functionality to optimize its use</li>
+          <li class="IndentedList">Can also showcase photos connected to the records 
+          </li>
+          <li>Has the option for a user to locate their current place on the map
+          </li>
+          <li>The option for a routing widget connected to a custom utility routing network is possible
+          </li>
+          <li>Can be duplicated and customized by changing the actual application or the data 
+          </li>
+        </ul>
+    <h5>Cons:</h5>
+    <ul>
+        <li></li>The search bar doesn’t always register when an option is selected and requires users to select it twice for it to be highlighted on the map
+        </li>
+        <li>The locate function is not very precise, especially when in a building 
+        </li>
+        <li>No coding options unless using the Developer version of Experience Builder 
+        </li>
+        <li>Data going into this needs to be exactly the right format and have the right attributes for optimal functionality </li>
+        <li class="IndentedList">What worked for us was a web map made up of a group layer of feature layers</li>
+        <li>'Actions' and 'Triggers' can be confusing and need to be tested or researched</li>
+    </ul>
   </div>
-  <h3> Pros: </h3>
-  <ul>
- 		<li> Easy to use with a lot of options</li>
-		<li> Has a search bar that connects to the map and can highlight the selected record</li>
- 		<li> Can have lists showing records that are connected to the map data</li>
-        <li> Has the option for a navigational widget</li>
-        <li> Once there is a workflow it is simple to rebuild an Experience Builder</li>
-	</ul>
-  <h3> Cons: </h3>
-  <ul>
- 		<li> Actions and triggers can be confusing and the wrong selection can mess with the data</li>
-		<li> Customization is limited and the style of widget items is not as customizable as potentially needed</li>
- 		<li> </li>
-	</ul>
-</div>
 <!-- End page content -->
 
 <footer class="w3-center w3-padding-16 bottom" id="footer">
