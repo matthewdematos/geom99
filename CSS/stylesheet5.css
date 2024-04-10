@@ -544,7 +544,10 @@ video{
 }
 /*Stylization for links on the Expereince Builder Page*/
 .EBLink{
-  color: black;
+  color: rgb(251, 247, 247);
+  background-color: #10273b;
+  padding: 15px;
+  text-align: center;
 }
 .EBLink:hover{
   color: #264c6c;
