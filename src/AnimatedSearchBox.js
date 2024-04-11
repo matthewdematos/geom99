@@ -1,6 +1,6 @@
 (function (factory, window) {
 
-    // define an AMD module that relies on 'leaflet'
+    // define an AMD module that relies on 'leaflet' 
     if (typeof define === 'function' && define.amd) {
         define(['leaflet'], factory);
 
