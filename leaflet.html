@@ -6,6 +6,8 @@
   <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">
     <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Animated search box CSS from https://github.com/luka1199/Leaflet.AnimatedSearchBox-->
+  <link href="src/AnimatedSearchBox.css" rel="stylesheet">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -14,7 +16,10 @@
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+   <!-- Leaflet AJAX JS-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+   <!-- Animated search box JS -->
+   <script src="src/AnimatedSearchBox.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -50,46 +55,14 @@
 
 var map = L.map('map').setView([44.3408, -78.7409], 18);
 
-// var firstStyle = {
-//     style: function(feature) {
-//         switch (feature.properties.FLOOR) {
-//             case '1': return {color: "#ff0000"};
-// 	}
-//     }
-// };
-
-var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
 	minZoom: 0,
 	maxZoom: 20,
 	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	ext: 'png'
 }).addTo(map);
-	
-// var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
-// 	minZoom: 0,
-// 	maxZoom: 20,
-// 	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-// 	ext: 'png'
-// }).addTo(map);
-	    
-// var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
 
-// function createOverlay(data, layerName, style) {
-//   var overlay = L.geoJson(data, { // Make the layer from the JSON and grab the handle.
-//     polygonToLayer: function (feature, latlng) {
-//     return L.polygon(latlng, style); 
-//     }
-//   });
-//   overlay.addTo(map); // Add the data to the map, now you can see the point layer.
-//   control.addOverlay(overlay, layerName); // Add the layer to the Layer Control.
-// }
-
-// var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", 
-// function (data) { createOverlay(data, "First Floor", firstStyle) });
-
+// Add floor shapefiles from locally hosted GeoJSON
 var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
     style: function(feature) {
         switch (feature.properties.FLOOR) {
@@ -112,33 +85,19 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
-	
-// });
-//     style: function(feature) {
-//         switch (feature.properties.FLOOR) {
-//             case '1': return {color: "#ff0000"};
-//         }
-//     }
-// }).addTo(map);
-// var firstFloor = L.layerGroup().addTo(map)
-	
-// jQuery.getJSON( "GeoJSON/firstFloor.geojson", function( json ){
-//   L.geoJSON( json, {
-//     onEachFeature: addMyData(),
-//   })
-// })	
-
-
+// Define overlays to be included in the layer toggle
 var floors = {
     'First Floor': firstFloor,
     'Second Floor': secondFloor
 }
-
-// // var baseMap = {
-// //     'Open Street Map': osm
-// // }
 	
 var layerControl = L.control.layers(null, floors).addTo(map);
+
+// Insert search box
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left'
+}).addTo(map);
 	
 </script>
 <!-- End page content -->
