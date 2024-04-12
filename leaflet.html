@@ -102,6 +102,7 @@ var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map)
 var controlSearch = new L.Control.Search({
     position:'topright',		
     layer: firstFloor,
+    propertyName: 'LONGNAME',
     initial: false,
     zoom: 18,
     marker: false
