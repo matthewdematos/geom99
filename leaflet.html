@@ -10,8 +10,7 @@
   <link href="src/AnimatedSearchBox.css" rel="stylesheet">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
    <!-- Leaflet JS -->
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -85,6 +84,12 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
+// Insert search box
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left'
+}).addTo(map);
+	
 // Define overlays to be included in the layer toggle
 var floors = {
     'First Floor': firstFloor,
@@ -93,12 +98,7 @@ var floors = {
 	
 var layerControl = L.control.layers(null, floors).addTo(map);
 
-// Insert search box
-var searchbox = L.control.searchbox({
-    position: 'topright',
-    expand: 'left'
-}).addTo(map);
-	
+
 </script>
 <!-- End page content -->
 
