@@ -99,15 +99,23 @@ var floors = {
 	
 var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);	
 	
-L.Control.Search({
+var controlSearch = new L.Control.Search({
+    position:'topright',		
     layer: firstFloor,
-    propertyName: "LONGNAME",
+    initial: false,
+    zoom: 18,
+    marker: false
+});
+
+map.addControl( controlSearch );
+    // layer: firstFloor,
+    // propertyName: "LONGNAME",
     // marker: false,
     // moveToLocation: function(latlng, title, map) {
     //     map.setView(latlng, 18); 
-    // }
-})
-.addTo(map);
+//     // }
+// })
+// .addTo(map);
 	
 // // Insert search box
 // var searchbox = L.control.searchbox({
