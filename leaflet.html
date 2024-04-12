@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title> S.S. Pathfinders </title>
+	
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="CSS/stylesheet.css">
   <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">	
@@ -12,7 +13,6 @@
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
   <!-- Leaflet Search CSS -->
   <link rel="stylesheet" href="CSS/leaflet-search.css">
-<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.css"/> -->
 	
   <!-- SCRIPTS -->
   <!-- Leaflet JS -->
@@ -24,6 +24,7 @@
   <!-- Leaflet Search JS
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script> -->
   <script src="JavaScript/leaflet-search.js"></script>
+	
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -56,7 +57,9 @@
   </div>
   
 <script>
-
+// used "Leaflet Quick Start Guide" and "Using GeoJSON with Leaflet" from Leaflet documentation to learn process
+// https://leafletjs.com/examples.html
+	
 var map = L.map('map').setView([44.3408, -78.7409], 18);
 
 var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
@@ -89,17 +92,19 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
-// Define overlays to be included in the layer toggle
+// Define overlays to be included in the layer toggle and add toggle to map, making layer selection static on screen
 var floors = {
     'Upper Floor': secondFloor,
-    'Lower Floor': firstFloor
-    
+    'Lower Floor': firstFloor    
 }
 	
-var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);	
-
-var frostFloors = L.featureGroup([firstFloor, secondFloor]).addTo(map);
+var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);
 	
+// Create feature group to call within search box 
+// inspired by https://gis.stackexchange.com/questions/166044/applying-a-single-leaflet-search-control-to-search-multiple-layers
+var frostFloors = L.featureGroup([firstFloor, secondFloor]).addTo(map);
+
+// Create search box and add to map, searching features by room number
 var controlSearch = new L.Control.Search({
     position:'topright',		
     layer: frostFloors,
@@ -110,22 +115,6 @@ var controlSearch = new L.Control.Search({
 });
 
 map.addControl( controlSearch );
-    // layer: firstFloor,
-    // propertyName: "LONGNAME",
-    // marker: false,
-    // moveToLocation: function(latlng, title, map) {
-    //     map.setView(latlng, 18); 
-//     // }
-// })
-// .addTo(map);
-	
-// // Insert search box
-// var searchbox = L.control.searchbox({
-//     position: 'topright',
-//     expand: 'left'
-// }).addTo(map);
-	
-
 
 </script>
 <!-- End page content -->
