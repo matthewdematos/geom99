@@ -55,9 +55,10 @@
 }
 
 /*Basic h tags and and p tags done by April*/
-p {font-family: "Segoe UI",Arial,sans-serif;
-   font-size: 18px;
-        margin-left:18px;
+p ul li{
+  font-family: "Segoe UI",Arial,sans-serif;
+  font-size: 18px;
+  margin-left:18px;
        
   }
 h1 {    
@@ -544,6 +545,8 @@ video{
 }
 /*Stylization for links on the Expereince Builder Page*/
 .EBLink{
+  margin-left: 30%;
+  margin-right: 30%;
   display: flex;
   justify-content: center;
   color: rgb(251, 247, 247);
