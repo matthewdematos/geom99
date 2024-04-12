@@ -17,8 +17,10 @@
      crossorigin=""></script>
    <!-- Leaflet AJAX JS-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-   <!-- Animated search box JS -->
-   <script src="src/AnimatedSearchBox.js"></script>
+   <!-- Leaflet Search -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script>
+   <!-- Animated search box JS 
+   <script src="src/AnimatedSearchBox.js"></script>-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -86,11 +88,15 @@ secondFloor.addTo(map);
 
 var frostFloors = L.layerGroup([firstFloor, secondFloor]);
     
-L.control.search({
+var searchControl = new L.control.search({
     layer: frostFloors,
-    initial: false,
-    propertyName: 'LONGNAME'
-}).addTo(map);
+    propertyName: 'LONGNAME',
+    marker: false,
+    moveToLocation: function(latlng, title, map) {
+        map.setView(latlng, 18); 
+    }
+});
+searchControl.addTo(map);
 	
 // // Insert search box
 // var searchbox = L.control.searchbox({
@@ -98,11 +104,11 @@ L.control.search({
 //     expand: 'left'
 // }).addTo(map);
 	
-// // Define overlays to be included in the layer toggle
-// var floors = {
-//     'First Floor': firstFloor,
-//     'Second Floor': secondFloor
-// }
+// Define overlays to be included in the layer toggle
+var floors = {
+    'First Floor': firstFloor,
+    'Second Floor': secondFloor
+}
 	
 var layerControl = L.control.layers(null, frostFloors).addTo(map);
 
