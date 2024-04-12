@@ -1,4 +1,4 @@
-/*
+/* From https://github.com/stefanocudini/leaflet-search/tree/master 
   Name          Data passed        Description
 
   Managed Events:
