@@ -90,15 +90,15 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
-var searchControl = new L.Control.search({
+L.Control.Search({
     layer: firstFloor,
     propertyName: "LONGNAME",
     marker: false,
     moveToLocation: function(latlng, title, map) {
         map.setView(latlng, 18); 
     }
-});
-searchControl.addTo(map);
+})
+.addTo(map);
 	
 // // Insert search box
 // var searchbox = L.control.searchbox({
