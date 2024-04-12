@@ -19,8 +19,8 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
    <!-- Leaflet Search -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script>
-   <!-- Animated search box JS 
-   <script src="src/AnimatedSearchBox.js"></script>-->
+   <!-- Animated search box JS--> 
+   <script src="src/AnimatedSearchBox.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -96,11 +96,11 @@ secondFloor.addTo(map);
 // });
 // searchControl.addTo(map);
 	
-// Insert search box
-// var searchbox = L.control.searchbox({
-//     position: 'topright',
-//     expand: 'left'
-// }).addTo(map);
+Insert search box
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left'
+}).addTo(map);
 	
 // Define overlays to be included in the layer toggle
 var floors = {
