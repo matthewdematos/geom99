@@ -90,6 +90,13 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
+// Define overlays to be included in the layer toggle
+var floors = {
+    'First Floor': firstFloor, 
+    'Second Floor': secondFloor
+}
+	
+var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);	
 L.Control.Search({
     layer: firstFloor,
     propertyName: "LONGNAME",
@@ -106,13 +113,6 @@ L.Control.Search({
 //     expand: 'left'
 // }).addTo(map);
 	
-// Define overlays to be included in the layer toggle
-var floors = {
-    'First Floor': firstFloor, 
-    'Second Floor': secondFloor
-}
-	
-var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);
 
 
 </script>
