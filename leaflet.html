@@ -84,13 +84,13 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
-// var frostFloors = L.layerGroup([firstFloor, secondFloor]);
+var frostFloors = L.layerGroup([firstFloor, secondFloor]);
     
-// L.control.search({
-//     layer: frostFloors,
-//     initial: false,
-//     propertyName: 'LONGNAME'
-// }).addTo(map);
+L.control.search({
+    layer: frostFloors,
+    initial: false,
+    propertyName: 'LONGNAME'
+}).addTo(map);
 	
 // // Insert search box
 // var searchbox = L.control.searchbox({
@@ -98,13 +98,13 @@ secondFloor.addTo(map);
 //     expand: 'left'
 // }).addTo(map);
 	
-// Define overlays to be included in the layer toggle
-var floors = {
-    'First Floor': firstFloor,
-    'Second Floor': secondFloor
-}
+// // Define overlays to be included in the layer toggle
+// var floors = {
+//     'First Floor': firstFloor,
+//     'Second Floor': secondFloor
+// }
 	
-var layerControl = L.control.layers(null, floors).addTo(map);
+var layerControl = L.control.layers(null, frostFloors).addTo(map);
 
 
 </script>
