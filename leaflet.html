@@ -49,12 +49,48 @@
 </header>
 
 <!-- Page content -->
-  <div class="w3-container w3-padding-32 text-dive" id="projects">
-	<h1> S.S. Pathfinders </h1>
-	<h3>Introduction</h3> 
-	    
-  <div id="map"></div>  
-  </div>
+<div class="w3-container w3-padding-32 text-dive" id="projects">
+    <h3>Leaflet</h3> 
+    <p>The application below is a Leaflet map created using JavaScript, coded directly in this webpage.</p>
+    <div id="map"></div>  
+
+    <h3>Overview<h3>
+    <p>The goal of this group was to create a navigation map that allows visitors to see their location and the location of a searchable
+	destination. On this map, users can toggle the upper and lower floor layers on and off, and input a room number into the search box which 
+	can autocomplete. The application then zooms in to the area where the room is found.</p>
+    <p>This is on the way to accomplishing what the group's end goal was. For a team without much JavaScript experience and no experience with Leaflet,
+    all of the quirks of the open source library became time-consuming obstacles. A search box and layer visibility options are basic functionalities of
+    online maps, but incorporating them into this map took the entire duration of this project. The tools and options are very specific and often 
+    unintuitive. </p>
+    <p><b>Next Steps: </b>There are some issues that would need to be addressed to build upon the existing code. The current application does not
+    drop a pin or highlight the room that is being searched for, only zooming into the general area. It also does not respond based on which layer
+    the destination is in, requiring the map user to toggle manually. The search function is clunky, and on mobile forces the webpage to zoom in
+    to the search bar without resetting to the map extent, which is bad UI. The layers sometimes display out of order, with the lower floor over top of the
+    lower floor. If that could be sorted out, resymbolizing the map by room type would be a better solution than the two-colour symbology for the two floors.</p>
+    
+
+    <h3>Conclusion and Next Steps</h3>
+    <p>Leaflet is a very useful and customizable tool with many functionalities that are hard to find in an open source environment. However, 
+    harnessing the capabilities within Leaflet is a difficult process, especially for people without a strong background in JavaScript. An experienced
+    Leaflet user would be able to accomplish the goal set out by the team only using Leaflet, and given enough time, S.S. Pathfinders likely
+    could as well. The full application made using Leaflet would not require proprietary softwares or licenses, which depending on budget and 
+    available software, could justify the amount of work and/or expertise needed on the front-end.</p>
+    
+	
+    <h3>Pros</h3>
+    <ul> 
+	    <li> Free to use and can be hosted in a GitHub repository</li>
+	    <li> Very customizable</li>
+	    <li> Lightweight and loads quickly </li>
+	    <li> Responsive</li>
+    </ul>
+    <h3>Cons</h3>
+    <ul>
+	    <li> Leaflet is difficult to use, requiring a large time investment or a very experienced user</li>
+	    <li> Leaflet is open source, and many of the plugins are outdated and have no support from the creator</li>
+	    <li> Not as refined and modern looking as other applications without massive effort</li>
+    </ul>
+</div>
   
 <script>
 // used "Leaflet Quick Start Guide" and "Using GeoJSON with Leaflet" from Leaflet documentation to learn process
@@ -110,13 +146,14 @@ var controlSearch = new L.Control.Search({
     layer: frostFloors,
     propertyName: 'LONGNAME',
     initial: false,
-    zoom: 19,
+    zoom: 20,
     marker: false
 });
 
 map.addControl( controlSearch );
 
 </script>
+	  
 <!-- End page content -->
 
 <footer class="w3-center w3-padding-16 bottom" id="footer">
