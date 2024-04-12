@@ -99,7 +99,7 @@ var floors = {
 	
 var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);	
 
-var frostFloors = L.featureGroup([firstFloor, secondFloor]);
+var frostFloors = L.featureGroup([firstFloor, secondFloor]).addTo(map);
 	
 var controlSearch = new L.Control.Search({
     position:'topright',		
