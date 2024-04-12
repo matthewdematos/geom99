@@ -4,11 +4,14 @@
   <title> S.S. Pathfinders </title>
   <link rel="stylesheet" href="CSS/stylesheet.css">
   <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">
+	
     <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Leaflet search CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.css"/>
   <!-- Animated search box CSS from https://github.com/luka1199/Leaflet.AnimatedSearchBox-->
   <link href="src/AnimatedSearchBox.css" rel="stylesheet">
-  <!-- Leaflet CSS -->
+  <!-- Leaflet Search CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
    <!-- Leaflet JS -->
@@ -17,7 +20,7 @@
      crossorigin=""></script>
    <!-- Leaflet AJAX JS-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-   <!-- Leaflet Search -->
+   <!-- Leaflet Search JS-->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script>
    <!-- Animated search box JS--> 
    <script src="src/AnimatedSearchBox.js"></script>
@@ -86,9 +89,9 @@ secondFloor.on('data:loaded', function(){
 secondFloor.addTo(map);
 });
 
-var searchControl = new L.control.search({
+var searchControl = new L.Control.Search({
     layer: firstFloor,
-    //propertyName: 'LONGNAME',
+    propertyName: "LONGNAME",
     marker: false,
     moveToLocation: function(latlng, title, map) {
         map.setView(latlng, 18); 
