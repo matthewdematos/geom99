@@ -70,7 +70,7 @@ var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
     }
 });
 firstFloor.on('data:loaded', function(){
-// firstFloor.addTo(map);
+firstFloor.addTo(map);
 });
 	
 var secondFloor = new L.GeoJSON.AJAX("GeoJSON/secondFloor.geojson", {
@@ -81,7 +81,7 @@ var secondFloor = new L.GeoJSON.AJAX("GeoJSON/secondFloor.geojson", {
     }
 });	
 secondFloor.on('data:loaded', function(){
-// secondFloor.addTo(map);
+secondFloor.addTo(map);
 });
 
 var frostFloors = L.layerGroup([firstFloor, secondFloor});
