@@ -536,8 +536,12 @@ From https://www.shecodes.io/athena/40835-how-to-round-an-image-in-html#:~:text=
 }
 /*For videos to allow them to show up on screen well*/
 video{
-  height:auto;
+  height: auto;
   width: 100%;
+}
+#VideoB{
+  height: auto;
+  max-width: 886px;
 }
 /*To create a mulit level bullet list*/
 .IndentedList{
