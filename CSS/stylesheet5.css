@@ -541,7 +541,7 @@ video{
 }
 #VideoB{
   height: auto;
-  max-width: 886px;
+  max-width: 100%;
 }
 /*To create a mulit level bullet list*/
 .IndentedList{
