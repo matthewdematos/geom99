@@ -92,18 +92,20 @@ secondFloor.addTo(map);
 
 // Define overlays to be included in the layer toggle
 var floors = {
-    'First Floor': firstFloor, 
-    'Second Floor': secondFloor
+    'Upper Floor': secondFloor,
+    'Lower Floor': firstFloor
+    
 }
 	
 var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);	
+	
 L.Control.Search({
     layer: firstFloor,
     propertyName: "LONGNAME",
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-        map.setView(latlng, 18); 
-    }
+    // marker: false,
+    // moveToLocation: function(latlng, title, map) {
+    //     map.setView(latlng, 18); 
+    // }
 })
 .addTo(map);
 	
