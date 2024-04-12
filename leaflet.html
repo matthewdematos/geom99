@@ -104,11 +104,11 @@ secondFloor.addTo(map);
 	
 // Define overlays to be included in the layer toggle
 var floors = {
-    'First Floor': firstFloor,
+    'First Floor': firstFloor, 
     'Second Floor': secondFloor
 }
 	
-var layerControl = L.control.layers(null, floors, collapsed: false).addTo(map);
+var layerControl = L.control.layers(null, floors, {collapsed: false}).addTo(map);
 
 
 </script>
