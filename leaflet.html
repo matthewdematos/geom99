@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
   <title> S.S. Pathfinders </title>
+  <!-- STYLESHEETS -->
   <link rel="stylesheet" href="CSS/stylesheet.css">
-  <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">
-	
-    <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
+  <link id="g5style" rel="stylesheet" href="CSS/stylesheet5.css">	
+  <!--Style sheet for social media icons from:https://www.w3schools.com/howto/howto_css_social_media_buttons.asp-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Leaflet search CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.css"/>
-  <!-- Animated search box CSS from https://github.com/luka1199/Leaflet.AnimatedSearchBox-->
-  <link href="src/AnimatedSearchBox.css" rel="stylesheet">
-  <!-- Leaflet Search CSS -->
+  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
-   <!-- Leaflet JS -->
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  <!-- Leaflet Search CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.css"/>
+	
+  <!-- SCRIPTS -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-   <!-- Leaflet AJAX JS-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-   <!-- Leaflet Search JS
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script> -->
-   <script src="JavaScript/leaflet-search.js"></script>
-   <!-- Animated search box JS--> 
-   <script src="src/AnimatedSearchBox.js"></script>
+  <!-- Leaflet AJAX JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+  <!-- Leaflet Search JS
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.8/leaflet-search.min.js"></script> -->
+  <script src="JavaScript/leaflet-search.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
   <body>
@@ -106,8 +104,8 @@ var controlSearch = new L.Control.Search({
     layer: frostFloors,
     propertyName: 'LONGNAME',
     initial: false,
-    zoom: 18,
-    marker: false
+    zoom: 19,
+    marker: true
 });
 
 map.addControl( controlSearch );
