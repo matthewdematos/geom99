@@ -72,7 +72,7 @@ var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
     }
 });
 firstFloor.on('data:loaded', function(){
-// firstFloor.addTo(map);
+firstFloor.addTo(map);
 });
 	
 var secondFloor = new L.GeoJSON.AJAX("GeoJSON/secondFloor.geojson", {
@@ -83,26 +83,24 @@ var secondFloor = new L.GeoJSON.AJAX("GeoJSON/secondFloor.geojson", {
     }
 });	
 secondFloor.on('data:loaded', function(){
-// secondFloor.addTo(map);
+secondFloor.addTo(map);
 });
 
-var frostFloors = L.layerGroup([firstFloor, secondFloor]);
-    
-var searchControl = new L.control.search({
-    layer: frostFloors,
-    propertyName: 'LONGNAME',
-    marker: false,
-    moveToLocation: function(latlng, title, map) {
-        map.setView(latlng, 18); 
-    }
-});
-searchControl.addTo(map);
+// var searchControl = new L.control.search({
+//     layer: frostFloors,
+//     propertyName: 'LONGNAME',
+//     marker: false,
+//     moveToLocation: function(latlng, title, map) {
+//         map.setView(latlng, 18); 
+//     }
+// });
+// searchControl.addTo(map);
 	
-// // Insert search box
-// var searchbox = L.control.searchbox({
-//     position: 'topright',
-//     expand: 'left'
-// }).addTo(map);
+// Insert search box
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left'
+}).addTo(map);
 	
 // Define overlays to be included in the layer toggle
 var floors = {
@@ -110,7 +108,7 @@ var floors = {
     'Second Floor': secondFloor
 }
 	
-var layerControl = L.control.layers(null, frostFloors).addTo(map);
+var layerControl = L.control.layers(null, floors).addTo(map);
 
 
 </script>
