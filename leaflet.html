@@ -116,8 +116,8 @@ var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
 }).addTo(map);	
 
 // var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
-// 	minZoom: 0,
-// 	maxZoom: 20,
+// 	minZoom: 15,
+// 	maxZoom: 19,
 // 	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 // 	ext: 'png'
 // }).addTo(map);
@@ -126,7 +126,8 @@ var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest
 var firstFloor = new L.GeoJSON.AJAX("GeoJSON/firstFloor.geojson", {
     style: function(feature) {
         switch (feature.properties.SPACETYPE) {
-            case 'OFFICE': return {color: "#ff0000"};
+            case 'OFFICE': return {color: "#ff0000", fillOpacity: 1}
+	    case 'CLASSROOM': return {color: "#FF5733", fillOpacity: 1};
         }
     }
 });
