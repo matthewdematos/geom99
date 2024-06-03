@@ -109,6 +109,12 @@
 	
 var map = L.map('map').setView([44.3408, -78.7409], 18);
 
+var bounds = [[44.3395310, -78.746241], [44.341563, -78.727780]]; // Example bounds covering the entire world
+
+]map.setMaxBounds(bounds);
+
+map.fitBounds(bounds);
+
 var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
 	minZoom: 0,
 	maxZoom: 20,
